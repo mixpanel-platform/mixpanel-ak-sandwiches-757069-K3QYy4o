@@ -17,18 +17,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- FONT -->
-  <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/ak.css">
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
-<!-- jqeury -->
+<!-- jquery -->
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="interactions.js"></script>
 </head>
@@ -52,19 +51,23 @@
        
         <div class="wizardContainer visuals" id="chartType">
         <form>
-          <div id="line">
-          <img src="graphics/line.png" height="200" width="200" alt="line" /><p>Line</p>
+          <div id="line" class="imageToggle" onclick="toggleImage(this);">
+           <input class="radioButton" type="radio" name="visType" value="line" />
+          <img src="graphics/line.png" id="chooseLine" class="toggleImage" height="130" width="130" alt="line" /><p>Line</p>
           </div>
           
-          <div id="bar">
-          <img src="graphics/bar.png" height="200" width="200" alt="bar"/><p>Bar</p>
+          <div id="bar" class="imageToggle" onclick="toggleImage(this);">
+          <input class="radioButton" type="radio" name="visType" value="bar"/>
+          <img src="graphics/bar.png" id="chooseBar" class="toggleImage" height="130" width="130" alt="bar"/><p>Bar</p>
           </div>
           
-          <div id="pie">
-          <img src="graphics/pie.png" height="200" width="200" alt="pie"/><p>Pie</p></div>
+          <div id="pie" class="imageToggle" onclick="toggleImage(this);">
+          <input class="radioButton" type="radio" name="visType" value="pie"  />
+          <img src="graphics/pie.png" id="choosePie" class="toggleImage" height="130" width="130" alt="pie"/><p>Pie</p></div>
           
-          <div id="table">
-          <img src="graphics/table.png" height="200" width="200" alt="table"/><p>Table</p>
+          <div id="table" class="imageToggle" onclick="toggleImage(this);">
+          <input class="radioButton" type="radio" name="visType" value="table" />
+          <img src="graphics/table.png" id="chooseTable" class="toggleImage" height="130" width="130" alt="table"/><p>Table</p>
           </div>
       </form>
         </div>
@@ -79,7 +82,7 @@
        
         <div class="wizardContainer events" id="mpEvents">
         <form>
-         <img height="300" width="800" style="margin-left:40px">
+         <img height="300" width="600" style="margin-left:-15px">
         </form>
         </div>
         
@@ -95,13 +98,28 @@
        
         <div class="wizardContainer analysis" id="analysis">
         <form>
-          <div id="line"><img src="graphics/uniqes.png" height="200" width="200" alt="line" /><p>Uniques</p></div>
+          <div id="unique" class="imageToggle" onclick="toggleImage2(this);">
+          <input class="radioButton" type="radio" name="analType" value="unique" />
+          <img src="graphics/uniqes.png" id="chooseUniques" class="toggleImage" height="130" width="130" alt="unique" />
+          <p>Uniques</p>
+          </div>
           
-          <div id="bar"><img src="graphics/totals.png" height="200" width="200" alt="bar"/><p>Totals</p></div>
+          <div id="total" class="imageToggle" onclick="toggleImage2(this);">
+          <input class="radioButton" type="radio" name="analType" value="total" />
+          <img src="graphics/totals.png" id="chooseTotals" class="toggleImage" height="130"  width="130" alt="total"/>
+          <p>Totals</p>
+          </div>
           
-          <div id="pie"><img src="graphics/average.png" height="200" width="200" alt="pie"/><p>Average</p></div>
+          <div id="average" class="imageToggle" onclick="toggleImage2(this);">
+          <input class="radioButton" type="radio" name="analType" value="average" />
+          <img src="graphics/average.png" id="chooseAverage" class="toggleImage" height="130" width="130" alt="average"/>
+          <p>Average</p>
+          </div>
           
-          <div id="table"><img src="graphics/mockCal.png" height="200" width="200" alt="table"/><p>Date Range</p></div>
+          <div id="dateRange">
+          <img src="graphics/mockCal.png" height="20" width="130" alt="table"/>
+          <p>Date Range</p>
+          </div>
         </form>
         </div>
         
