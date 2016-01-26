@@ -1,15 +1,158 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
-    <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
-  </head>
-  <body class="mixpanel-platform-body">
-    <h1>Hello, World!</h1>
-    <script>
-      // Run queries and display results here
-    </script>
-  </body>
+<html lang="en">
+<head>
+
+  <!-- Page Info -->
+  <meta charset="utf-8">
+  <title>Dashboard Maker</title>
+  <meta name="description" content="For Platform">
+  <meta name="author" content="AK">
+
+  <!-- mixpanel stuff -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
+  <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT -->
+  <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/ak.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+<!-- jqeury -->
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="interactions.js"></script>
+</head>
+
+<body>
+
+  <!-- Primary Page Layout -->
+  <div class="container" id="byLine">
+    <div class="row">
+      <div class="twelve columns" style="margin-top: 3%">
+        <h4><img src="graphics/dashMaker.png" alt="The Dashboard Maker"></h4>
+        <p>by AK & Emmett</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="visualization">
+    <div class="row">
+    <div class="twelve columns">
+    <h2>Choose a type of Visualization:</h2>
+       
+        <div class="wizardContainer visuals" id="chartType">
+        <form>
+          <div id="line">
+          <img src="graphics/line.png" height="200" width="200" alt="line" /><p>Line</p>
+          </div>
+          
+          <div id="bar">
+          <img src="graphics/bar.png" height="200" width="200" alt="bar"/><p>Bar</p>
+          </div>
+          
+          <div id="pie">
+          <img src="graphics/pie.png" height="200" width="200" alt="pie"/><p>Pie</p></div>
+          
+          <div id="table">
+          <img src="graphics/table.png" height="200" width="200" alt="table"/><p>Table</p>
+          </div>
+      </form>
+        </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="container" id="events">
+    <div class="row">
+    <div class="twelve columns">
+    <h2>Choose your event(s) and filters:</h2>
+       
+        <div class="wizardContainer events" id="mpEvents">
+        <form>
+         <img height="300" width="800" style="margin-left:40px">
+        </form>
+        </div>
+        
+   </div>
+   </div>
+   </div>
+
+
+  <div class="container" id="analysis">
+    <div class="row">
+    <div class="twelve columns">
+    <h2>Choose your analysis type & time frame:</h2>
+       
+        <div class="wizardContainer analysis" id="analysis">
+        <form>
+          <div id="line"><img src="graphics/uniqes.png" height="200" width="200" alt="line" /><p>Uniques</p></div>
+          
+          <div id="bar"><img src="graphics/totals.png" height="200" width="200" alt="bar"/><p>Totals</p></div>
+          
+          <div id="pie"><img src="graphics/average.png" height="200" width="200" alt="pie"/><p>Average</p></div>
+          
+          <div id="table"><img src="graphics/mockCal.png" height="200" width="200" alt="table"/><p>Date Range</p></div>
+        </form>
+        </div>
+        
+   </div>
+   </div>
+   </div>
+
+
+
+  <div class="container" id="chartName">
+    <div class="row">
+    <div class="twelve columns">
+    <h4>Name your chart:</h4>
+       
+       
+    <div id="chartName"><label for="exampleEmailInput">Name</label>
+      <input class="u-full-width" type="email" placeholder="Monthly Active Users" id="exampleEmailInput"></div>
+  
+  <button class="primiary">Make it So!</button>
+  <br>
+  <div id="sampleQuery">
+  <label for="exampleEmailInput">Query</label>
+  <input class="u-full-width" type="email" placeholder='http://mixpanel.com/api/2.0/segmentation/?on=properties["model_id"]&format=json&type=general&from_date=2016-01-03&expire=1451952239&sig=3795cd1bff6ef305b13c8dcd9c78eabd&to_date=2016-01-03&api_key=c8c3c9be8e9878cdabc387959a5ca0d4&where="impression" == properties["event_type"]&event=USER&unit=day"' id="exampleEmailInput"/>
+  </div>
+  <br><br>
+  <h4>Preview</h4>
+  <div id="preview">
+  <img src="" style="margin-left:5%" height="500" width="80%" /><br/><br/>
+   </div>
+   </div>
+   </div>
+   </div>
+
+<div class="container" id="results">
+<div class="row">
+<div class="twelve columns">
+<h2>Get the Code</h2>
+<p>Use this code in Mixpanel's custom applications tab to make this dashboard</p>
+<div id="codeResult">
+<form>
+<label for="exampleMessage">Code</label>
+  <textarea class="u-full-width" placeholder="<body> ... </body>" id="exampleMessage"></textarea>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<!-- Scripts -->
+</body>
 </html>

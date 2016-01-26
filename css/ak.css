@@ -1,0 +1,77 @@
+#byLine
+{
+	text-align: right;
+	
+}
+
+img
+{
+	opacity: .6;
+}
+
+img:hover {
+	opacity: 2;
+}
+
+html{
+	background-color: #f0f2f6;
+}
+
+.container
+{
+	background-color: #ffffff;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+form
+{
+	margin-bottom: 0rem;
+}
+button:hover
+{
+ background-color: yellow;
+}
+
+button:active
+{
+	background-color: green;
+	color: white;
+}
+
+
+
+#byLine h4
+{
+
+margin-bottom: 0rem;
+
+}
+
+.wizardContainer div
+{
+	display: inline-block;
+	margin-right: 15px;
+}
+
+.wizardContainer p
+{
+	text-align: center;
+}
+
+
+
+
+
+/* checkboxes */
+
+.checkbox #line{
+    width: 200px;
+    height: 200px;
+    background-image : url('graphics/line.png');
+    background-color: green;
+   	
+}
+.checked #line{
+    background: transparent url(http://i.stack.imgur.com/S4p2R.png) no-repeat 80% 50%
+}
