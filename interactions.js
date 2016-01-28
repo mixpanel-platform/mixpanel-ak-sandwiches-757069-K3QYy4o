@@ -1,11 +1,18 @@
-function div()
-{
-    console.log('----------');
-}
 
-
+//backend query this object
 var queryConfig = {};
 
+//backed push code to this object
+var queryResult = {
+    sampleQuery : "",
+    pasteCode : "",
+    previewHTML : "",
+    pushChanges : function(){pasteCode(); writeHTML();}
+
+};
+
+
+//front end for chart selector
 function toggleImage(containerElem) {
 
     	
@@ -44,7 +51,7 @@ function toggleImage(containerElem) {
         }    
     }
 
-
+//front end for analysis type
 function toggleImage2(containerElem) {
 
         
@@ -78,3 +85,46 @@ function toggleImage2(containerElem) {
             console.log('did nothing');
         }    
     }
+
+//the date picker
+$(document).ready(function() {
+    var dateSelector = $('<div></div>').appendTo('body').MPDatepicker();    // Create a date picker
+    dateSelector.on('change', function(e, dates) {                          // Do something when the dates are changed
+        console.log('From: ' + dates.from + '\nTo: ' + dates.to);
+    });
+});
+
+
+function getDetails()
+{
+    queryConfig.chartName = $('#myChartName').val();
+
+
+
+}
+
+
+
+
+function pasteCode()
+{
+     $('#codeResult textarea').val(queryResult.pasteCode); 
+     $('#sampleQuery input').val(queryResult.sampleQuery)
+
+}
+
+function writeHTML()
+{
+
+     $('#preview').html(queryResult.previewHTML + '<br/><br/>');
+
+}
+
+
+//ak's silly helper classes
+
+function div()
+{
+    console.log('----------');
+}
+
