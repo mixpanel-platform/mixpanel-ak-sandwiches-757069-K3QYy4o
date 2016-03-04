@@ -24,15 +24,15 @@
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/ak.css">
 
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
 <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="interactions.js"></script>
 </head>
 
-<body>
+<body class="mixpanel-platform-body">
 
   <!-- Primary Page Layout -->
   <div class="container" id="byLine">
@@ -77,14 +77,16 @@
 
   <div class="container" id="events">
     <div class="row">
-    <div class="twelve columns">
+    <div class="twelve columns events">
     <h2>Choose your event(s) and filters:</h2>
+   
+      <div id="eventSelect"></div><br/>
+      <div id="by" class="mixpanel-platform-label" style="margin-left: 10px; display: none;">by</div>
+      <div id="propSelect"></div>
        
-        <div class="wizardContainer events" id="mpEvents">
-        <form>
-         <img height="300" width="600" style="margin-left:-15px">
-        </form>
-        </div>
+
+        
+        
         
    </div>
    </div>
@@ -95,9 +97,12 @@
     <div class="row">
     <div class="twelve columns">
     <h2>Choose your analysis type & time frame:</h2>
+       <div id="dateRange">
+       <div id="dateSelect"></div>
        
-        <div class="wizardContainer analysis" id="analysis">
+       <div class="wizardContainer analysis" id="analysis">
         <form>
+
           <div id="unique" class="imageToggle" onclick="toggleImage2(this);">
           <input class="radioButton" type="radio" name="analType" value="unique" />
           <img src="graphics/uniqes.png" id="chooseUniques" class="toggleImage" height="130" width="130" alt="unique" />
@@ -115,12 +120,8 @@
           <img src="graphics/average.png" id="chooseAverage" class="toggleImage" height="130" width="130" alt="average"/>
           <p>Average</p>
           </div>
-          
-          <div id="dateRange">
-          <img src="graphics/mockCal.png" height="20" width="130" alt="table"/>
-          <div id="datePicker"></div>
-          <p>Date Range</p>
-          </div>
+    </div>
+  
         </form>
         </div>
         

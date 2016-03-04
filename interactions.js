@@ -1,4 +1,7 @@
-
+$(document).ready(function(){
+//Mixpanel Dev Stuff
+MP.api.setCredentials('6369a9ebce07770091b12273876b8887', '42d97c2a83b45f48eccea78273770f13')
+});
 //backend query this object
 var queryConfig = {};
 
@@ -104,28 +107,26 @@ function focusSelect()
 
 }
 
+$(document).ready(function(){
+//Mixpanel UI elements
 
-//the date picker IS NOT WORKING
-// $(document).ready(function() {
-//     var dateSelector = $('<div></div>').appendTo('body').MPDatepicker();    // Create a date picker
-//     dateSelector.on('change', function(e, dates) {                          // Do something when the dates are changed
-//         console.log('From: ' + dates.from + '\nTo: ' + dates.to);
-//     });
-// });
+var eventSelect = $('#eventSelect').MPEventSelect();
+var userEvent = $('#eventSelect').val()
+var propSelect  = $('#propSelect').MPPropertySelect();
+var dateSelect  = $('#dateSelect').MPDatepicker();
 
 
-// $('#datePicker').MPDatepicker().on('change', function(dateRange) {
-//     console.log(dateRange.from);
-//     console.log(dateRange.to);
-// });
+eventSelect.on('change', function(e, eventName) {
+        propSelect.MPPropertySelect('setEvent', eventName);
+        $("#by").show();
+
+      });
+
 
 
 function getDetails()
 {
     queryConfig.chartName = $('#myChartName').val();
-
-
-
 }
 
 
@@ -152,4 +153,13 @@ function div()
 {
     console.log('----------');
 }
+
+
+
+});
+
+
+
+
+
 
